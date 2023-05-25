@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/25 12:23:11 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/05/25 12:36:06 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int	main(int argc, char **argv)
 		return(1);
 	else if (argc == 2)
 		input = ft_split(argv[1], ' ');
-	
 	
 }
