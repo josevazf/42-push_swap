@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_main.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/25 11:37:41 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:46:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,12 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	char	**input;
-	int		i;
+	int		stack_size;
 
-	//a = NULL;
-	//b = NULL;
-	i = -1;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return(1);
+	if (argc < 2)
+		return (0);
 	else if (argc == 2)
 		input = ft_split(argv[1], ' ');
-	
+		stack_a = NULL;
+	stack_b = NULL;
 }
