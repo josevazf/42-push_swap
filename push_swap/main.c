@@ -6,16 +6,22 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/25 12:36:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:37:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+/* main:
+*	Checks if the input is correct, if it is initializes stacks a and b,
+*	assigns each value indexes and sorts the stacks. When sorting is done, frees
+*	the stacks and exits.
+*/
 int	main(int argc, char **argv)
 {
-	//t_stack	*a;
-	//t_stack	*b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	char	**input;
 	int		i;
 
