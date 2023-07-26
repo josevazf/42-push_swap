@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 10:36:01 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/07/26 15:53:53 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/07/26 15:57:49 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,3 +32,4 @@ fclean: clean
 
 re: fclean
 	$(MAKE) all
+	
