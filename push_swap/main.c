@@ -6,12 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/26 14:49:18 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:06:32 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 // Displays error message and exits with standard error code 1
 // *********** MOVE TO NEW FILE **********************
