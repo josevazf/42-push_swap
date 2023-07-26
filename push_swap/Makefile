@@ -6,27 +6,29 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 10:36:01 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/05/25 11:42:24 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/07/26 12:42:00 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= -o push_swap
-CC			= cc -Wall -Wextra -Werror
-#AR			= ar -rcs
+NAME		= push_swap
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
-SRCS		= ps_main.c ps_split.c
-
-OBJS		= ${SRCS:.c=.o}
+OBJS		= check_input.o
 
 all: $(NAME)
 
-$(NAME): 
-	$(CC) $(SRCS) $(NAME)
-		
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+	
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all
+re: fclean
+	$(MAKE) all
