@@ -6,12 +6,20 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/25 11:46:56 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:49:18 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+// Displays error message and exits with standard error code 1
+// *********** MOVE TO NEW FILE **********************
+void	exit_error()
+{
+	write(2, "Error\n", 6);
+	exit (1);
+}
 
 /* main:
 *	Checks if the input is correct, if it is initializes stacks a and b,
@@ -26,8 +34,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	else if (argc == 2)
-		input = ft_split(argv[1], ' ');
-		stack_a = NULL;
-	stack_b = NULL;
+	if (!check_args(argv))
+		exit_error();
+	return (0);
+	
 }
