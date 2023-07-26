@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/26 15:28:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:59:44 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Displays error message and exits with standard error code 1
 // *********** MOVE TO NEW FILE **********************
-void	exit_error()
+void	error_handle()
 {
 	write(2, "Error\n", 6);
 	exit (1);
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (!check_args(argv))
-		exit_error();
+		error_handle();
 	return (0);
 	
 }
