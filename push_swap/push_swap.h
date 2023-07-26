@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/26 14:49:37 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:08:51 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef	struct	s_stack
 }	t_stack;
 
 
+// check_args.c
+int check_args(char **argv);
+int	is_number(char *argv);
+int	is_sign(char c);
+int	is_digit(char c);
 
+void	exit_error();
 
 #endif
