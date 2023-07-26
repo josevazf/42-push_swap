@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/26 15:06:32 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:28:06 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	exit_error()
 */
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		stack_size;
+	//t_stack	*stack_a;
+	//t_stack	*stack_b;
+	//int		stack_size;
 
 	if (argc < 2)
 		return (0);
