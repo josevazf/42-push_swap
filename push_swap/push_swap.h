@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/05/25 10:48:05 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:49:37 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,7 @@ typedef	struct	s_stack
 	struct s_stack *prev;
 }	t_stack;
 
-// Split function
-char	**ft_split(char const *s, char c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strposi(char const *s, char c, int pos);
-int	ft_cntwrds(char const *s, char c);
-size_t	ft_strlen(const char *s);
+
 
 
 #endif
