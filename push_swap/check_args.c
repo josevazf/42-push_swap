@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:43:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/26 15:53:37 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 10:14:38 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ int check_args(char **argv)
 	{
 		if (!is_number(argv[i]))
 			return (0);
+		// Convert to int and push to linked_list
+		
 		count_zeros += is_zero(argv[i]);
 	}
 	if (count_zeros > 1)
@@ -83,3 +85,4 @@ int check_args(char **argv)
 		return (0);
 	return (1);
 }
+
