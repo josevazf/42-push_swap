@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 12:22:09 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 14:15:16 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,16 @@ void	error_handle()
 	exit (1);
 }
 
-/* main:
-*	Checks if the input is correct, if it is initializes stacks a and b,
-*	assigns each value indexes and sorts the stacks. When sorting is done, frees
-*	the stacks and exits.
-*/
+//	Checks if the input is correct, if it is initializes stacks a and b,
+//	assigns each value indexes and sorts the stacks. When sorting is done, frees
+//	the stacks and exits.
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	//t_stack	*stack_b;
 	//int		stack_size;
 
-	stack_a = malloc(sizeof(t_stack));
+	//stack_a = malloc(sizeof(t_stack));
 	if (argc < 2)
 		return (0);
 	if (!check_args(argv, &stack_a))
