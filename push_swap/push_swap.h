@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 12:02:55 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 12:17:33 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef	struct		s_stack
 
 
 // check_args.c
-int 	check_args(char **argv/* , t_stack **stack_a */);
+int 	check_args(char **argv, t_stack **stack_a);
 int		is_number(char *argv);
 int		is_sign(char c);
 int		is_digit(char c);
@@ -40,7 +40,7 @@ int		ft_istdelimiter(char c);
 
 // list_utils.c
 t_stack	*ft_create_node(int value);
-void    ft_print_list(t_stack *list);
+void    ft_print_stack(t_stack *list);
 void	ft_stack_push_back(t_stack **begin_stack, int value);
 
 
