@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 16:17:39 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 16:42:27 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,12 @@ void	error_handle()
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	int i;
 
-	i = -1;
 	if (argc < 2)
 		return (0);
-	if (!check_args(argv, &stack_a))
+	if (!check_args(argv))
 		error_handle();
-	while (argv[i])
-	{
-
-	}	
-	ft_print_stack(stack_a); // CLEAN ME 
+	create_stack_a(argv, &stack_a);
+	ft_print_stack(stack_a); //  ******** CLEAN ME ********
 	return (0);
 }
