@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/26 15:59:44 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 12:03:34 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	main(int argc, char **argv)
 	//t_stack	*stack_b;
 	//int		stack_size;
 
+	//stack_a = malloc(sizeof(t_stack));
 	if (argc < 2)
 		return (0);
-	if (!check_args(argv))
+	if (!check_args(argv/* , &stack_a */))
 		error_handle();
+	
 	return (0);
 	
 }
