@@ -19,13 +19,14 @@ void    ft_print_stack(t_stack *stack)
 	current = stack;
     while (current != NULL)
     {
-        printf("%i -> ", (int)current->value);
+        printf("value: %i \n", (int)current->value);
+		printf("index: %i \n", (int)current->index);
+		printf("\n");
         current = current->next;
     }
-	printf("\n");
 }
 
-t_stack	*ft_create_node(int value)
+t_stack	*ft_create_node(int value, long index)
 {
 	t_stack	*node;
 
@@ -33,12 +34,13 @@ t_stack	*ft_create_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = index;
 	node->next = NULL;
 
 	return (node);
 }
 
-void	ft_stack_push_back(t_stack **begin_stack, int value)
+void	ft_stack_push_back(t_stack **begin_stack, int value, long index)
 {
 	t_stack	*back;
 
@@ -47,8 +49,26 @@ void	ft_stack_push_back(t_stack **begin_stack, int value)
 	{
 		while(back->next)
 			back = back->next;
-		back->next = ft_create_node(value);
+		back->next = ft_create_node(value, index);
 	}
 	else
-		*begin_stack = ft_create_node(value);	
+		*begin_stack = ft_create_node(value, index);	
+}
+
+void	create_stack_a(char **argv, t_stack **stack_a)
+{
+	int i;
+	int value;
+	long index;
+
+	i = 0;
+	index = 0;
+	while (argv[++i])
+	{
+		value = ft_atoi(argv[i]);
+		if (i == 1)
+			*stack_a = ft_create_node(value, index);
+		else
+			ft_stack_push_back(stack_a, value, index);
+	}
 }
