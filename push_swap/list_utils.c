@@ -14,13 +14,15 @@
 
 void    ft_print_stack(t_stack *stack)
 {
-	t_stack *current = stack;
-
+	t_stack *current;
+	
+	current = stack;
     while (current != NULL)
     {
         printf("%i -> ", (int)current->value);
         current = current->next;
     }
+	printf("\n");
 }
 
 t_stack	*ft_create_node(int value)
@@ -41,7 +43,6 @@ void	ft_stack_push_back(t_stack **begin_stack, int value)
 	t_stack	*back;
 
 	back = *begin_stack;
-	
 	if (back)
 	{
 		while(back->next)
