@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:43:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 10:14:38 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 12:20:47 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,10 @@ int	is_number(char *argv)
 }
 
 //	Check if arguments are numbers without duplicates //
-int check_args(char **argv)
+int check_args(char **argv, t_stack **stack_a)
 {
 	int i;
+	int atoi;
 	int count_zeros;
 
 	count_zeros = 0;
@@ -75,8 +76,8 @@ int check_args(char **argv)
 	{
 		if (!is_number(argv[i]))
 			return (0);
-		// Convert to int and push to linked_list
-		
+		atoi = ft_atoi(argv[i]);
+		ft_stack_push_back(stack_a, atoi);
 		count_zeros += is_zero(argv[i]);
 	}
 	if (count_zeros > 1)
@@ -85,4 +86,3 @@ int check_args(char **argv)
 		return (0);
 	return (1);
 }
-
