@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:43:05 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 15:55:14 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/27 16:33:22 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,9 @@ int	is_number(char *argv)
 }
 
 //	Check if arguments are numbers without duplicates //
-int check_args(char **argv, t_stack **stack_a)
+int check_args(char **argv)
 {
 	int i;
-	int int_value;
 	int count_zeros;
 
 	count_zeros = 0;
@@ -76,11 +75,6 @@ int check_args(char **argv, t_stack **stack_a)
 	{
 		if (!is_number(argv[i]))
 			return (0);
-		int_value = ft_atoi(argv[i]);
-		if (i == 1)
-			*stack_a = ft_create_node(int_value);
-		else
-			ft_stack_push_back(stack_a, int_value);
 		count_zeros += is_zero(argv[i]);
 	}
 	if (count_zeros > 1)
