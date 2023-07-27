@@ -55,11 +55,13 @@ void	ft_stack_push_back(t_stack **begin_stack, int value, long index)
 		*begin_stack = ft_create_node(value, index);	
 }
 
+// Creates linked list with values from argv and index = 0
 void	create_stack_a(char **argv, t_stack **stack_a)
 {
-	int i;
-	int value;
-	long index;
+	int 	i;
+	int 	value;
+	long 	index;
+	t_stack 	*min_val;
 
 	i = 0;
 	index = 0;
@@ -71,4 +73,9 @@ void	create_stack_a(char **argv, t_stack **stack_a)
 		else
 			ft_stack_push_back(stack_a, value, index);
 	}
+	while(stack_a)
+	{
+
+	}
 }
+
