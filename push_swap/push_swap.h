@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 16:38:49 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/28 10:49:35 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ typedef	struct		s_stack
 //	FILE: check_args.c
 int 	check_args(char **argv);
 int		is_number(char *argv);
+int		is_duplicate(char **argv);
+
+// FILE: check_args_utils.c
 int		is_sign(char c);
 int		is_digit(char c);
-int		is_duplicate(char **argv);
 int		intcmp(const char *s1, const char *s2);
 
 // FILE: ft_atoi.c
@@ -39,11 +41,12 @@ int		ft_atoi(const char *str);
 int		ft_istdelimiter(char c);
 int		ft_tobinary(long nbr);
 
-// FILE: list_utils.c
+// FILE: stack_create.c
 void	create_stack_a(char **argv, t_stack **stack_a);
 t_stack	*ft_create_node(int value, long index);
 void    ft_print_stack(t_stack *list);
 void	ft_stack_push_back(t_stack **begin_stack, int value, long index);
+void	shadow_sort(&stack_a);
 
 
 void	error_handle();
