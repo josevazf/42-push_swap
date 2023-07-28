@@ -73,9 +73,5 @@ void	create_stack_a(char **argv, t_stack **stack_a)
 		else
 			ft_stack_push_back(stack_a, value, index);
 	}
-	while(stack_a)
-	{
-
-	}
 }
 
