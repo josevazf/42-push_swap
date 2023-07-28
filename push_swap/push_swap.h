@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/28 10:52:57 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/28 11:42:54 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	create_stack_a(char **argv, t_stack **stack_a);
 t_stack	*ft_create_node(int value, long index);
 void    ft_print_stack(t_stack *list);
 void	ft_stack_push_back(t_stack **begin_stack, int value, long index);
-void	shadow_sort(t_stack **stack_a);
+void	shadow_sort(t_stack **stack_a, int list_length);
 
 void	error_handle();
 
