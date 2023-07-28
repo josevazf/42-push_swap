@@ -24,6 +24,7 @@ void    ft_print_stack(t_stack *stack)
 		printf("\n");
         current = current->next;
     }
+	printf("- - - - - - - - - - -\n");
 }
 
 t_stack	*ft_create_node(int value, long index)
@@ -61,7 +62,6 @@ void	create_stack_a(char **argv, t_stack **stack_a)
 	int 	i;
 	int 	value;
 	long 	index;
-	t_stack 	*min_val;
 
 	i = 0;
 	index = 0;
