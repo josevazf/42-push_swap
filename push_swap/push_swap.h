@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/28 11:45:04 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/28 12:02:43 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_stack_push_back(t_stack **begin_stack, int value, long index);
 
 // FILE: shadow_sort.c
 void	shadow_sort(t_stack **stack_a, int list_length);
+t_stack	*get_min(t_stack *stack_a, int list_length);
 
 void	error_handle();
 
