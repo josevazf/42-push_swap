@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 16:42:27 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/28 10:48:20 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	if (!check_args(argv))
 		error_handle();
 	create_stack_a(argv, &stack_a);
+	shadow_sort(&stack_a);
 	ft_print_stack(stack_a); //  ******** CLEAN ME ********
 	return (0);
 }
