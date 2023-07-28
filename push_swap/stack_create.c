@@ -74,9 +74,3 @@ void	create_stack_a(char **argv, t_stack **stack_a)
 			ft_stack_push_back(stack_a, value, index);
 	}
 }
-
-void	shadow_sort(t_stack **stack_a, int list_length)
-{
-	
-
-}
