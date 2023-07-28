@@ -75,3 +75,8 @@ void	create_stack_a(char **argv, t_stack **stack_a)
 	}
 }
 
+void	shadow_sort(t_stack **stack_a, int list_length)
+{
+	
+
+}
