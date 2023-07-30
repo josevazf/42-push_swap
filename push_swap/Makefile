@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 10:36:01 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/07/28 12:03:04 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/07/30 12:39:30 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ NAME		= push_swap
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
-OBJS		= check_args.o check_args_utils.o ft_atoi.o stack_create.o shadow_sort.o
+OBJS		= check_args.o check_args_utils.o n_converter.o stack_create.o shadow_sort.o
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME) && ./push_swap 9 7 3 5 6 18 2 
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
@@ -27,9 +27,10 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 
-fclean: clean
+f: clean
 	$(RM) $(NAME)
 
 re: fclean
 	$(MAKE) all
-	
+
+.SILENT:
