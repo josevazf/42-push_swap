@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/28 12:02:43 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/30 12:41:34 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ int		is_sign(char c);
 int		is_digit(char c);
 int		intcmp(const char *s1, const char *s2);
 
-// FILE: ft_atoi.c
+// FILE: number_converter.c
 int		ft_atoi(const char *str);
-int		ft_istdelimiter(char c);
-int		ft_tobinary(long nbr);
+int		isdelimiter(char c);
+int		ft_itobi(int nbr);
 
 // FILE: stack_create.c
 void	create_stack_a(char **argv, t_stack **stack_a);
-t_stack	*ft_create_node(int value, long index);
-void    ft_print_stack(t_stack *list);
-void	ft_stack_push_back(t_stack **begin_stack, int value, long index);
+t_stack	*create_node(int value, long index);
+void    print_stack(t_stack *list);
+void	stack_push_back(t_stack **begin_stack, int value, long index);
 
 // FILE: shadow_sort.c
 void	shadow_sort(t_stack **stack_a, int list_length);

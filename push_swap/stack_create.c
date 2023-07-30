@@ -12,22 +12,23 @@
 
 #include "push_swap.h"
 
-void    ft_print_stack(t_stack *stack)
+void    print_stack(t_stack *stack)
 {
 	t_stack *current;
 	
 	current = stack;
     while (current != NULL)
     {
-        printf("value: %i \n", (int)current->value);
-		printf("index: %i \n", (int)current->index);
+        printf("value: %i \n", current->value);
+		printf("index: %i \n", current->index);
+		printf("index: %i \n", current->bin_index);
 		printf("\n");
         current = current->next;
     }
 	printf("- - - - - - - - - - -\n");
 }
 
-t_stack	*ft_create_node(int value, long index)
+t_stack	*create_node(int value, long index)
 {
 	t_stack	*node;
 
@@ -41,7 +42,7 @@ t_stack	*ft_create_node(int value, long index)
 	return (node);
 }
 
-void	ft_stack_push_back(t_stack **begin_stack, int value, long index)
+void	stack_push_back(t_stack **begin_stack, int value, long index)
 {
 	t_stack	*back;
 
@@ -50,10 +51,10 @@ void	ft_stack_push_back(t_stack **begin_stack, int value, long index)
 	{
 		while(back->next)
 			back = back->next;
-		back->next = ft_create_node(value, index);
+		back->next = create_node(value, index);
 	}
 	else
-		*begin_stack = ft_create_node(value, index);	
+		*begin_stack = create_node(value, index);	
 }
 
 // Creates linked list with values from argv and index = 0
@@ -69,8 +70,8 @@ void	create_stack_a(char **argv, t_stack **stack_a)
 	{
 		value = ft_atoi(argv[i]);
 		if (i == 1)
-			*stack_a = ft_create_node(value, index);
+			*stack_a = create_node(value, index);
 		else
-			ft_stack_push_back(stack_a, value, index);
+			stack_push_back(stack_a, value, index);
 	}
 }
