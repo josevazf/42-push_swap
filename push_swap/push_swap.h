@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/30 12:41:34 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 09:04:18 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@
 
 typedef	struct		s_stack 
 {
-	int 			index;
-	int				bin_index;
+	int 			srt_index;
+	int				srt_bin_index;
+	int				stk_index;
 	int				value;
 	struct s_stack 	*next;
+	struct s_stack	*previous;
 }	t_stack;
 
 
@@ -43,9 +45,9 @@ int		ft_itobi(int nbr);
 
 // FILE: stack_create.c
 void	create_stack_a(char **argv, t_stack **stack_a);
-t_stack	*create_node(int value, long index);
+t_stack	*create_node(int value, long srt_index);
 void    print_stack(t_stack *list);
-void	stack_push_back(t_stack **begin_stack, int value, long index);
+void	stack_push_back(t_stack **begin_stack, int value, long srt_index);
 
 // FILE: shadow_sort.c
 void	shadow_sort(t_stack **stack_a, int list_length);
