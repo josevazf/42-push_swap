@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 10:36:01 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/07/31 15:03:36 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/07/31 17:39:04 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= push_swap
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
-OBJS		= check_args.o check_args_utils.o n_converter.o stack_create.o shadow_sort.o op_swap.o op_push.o
+OBJS		= main_utils.o check_args.o check_args_utils.o n_converter.o stack_create.o shadow_sort.o op_swap.o op_push.o
 
 all: $(NAME)
 
