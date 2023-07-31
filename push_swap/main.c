@@ -6,19 +6,11 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 17:23:27 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 17:38:12 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// Displays error message and exits with standard error code 1
-// *********** MOVE TO NEW FILE **********************
-void	error_handle()
-{
-	write(2, "Error\n", 6);
-	exit (1);
-}
 
 //	Checks if the input is correct, if it is initializes stacks a and b,
 //	assigns each value indexes and sorts the stacks. When sorting is done, frees
@@ -46,8 +38,8 @@ int	main(int argc, char **argv)
 	pb(&stack_b, &stack_a);
 	pb(&stack_b, &stack_a);
 	pb(&stack_b, &stack_a);
-	pa(&stack_a, &stack_b);
-	pb(&stack_b, &stack_a);
+	//pa(&stack_a, &stack_b);
+	//pb(&stack_b, &stack_a);
 
 	//pa(&stack_a, &stack_b);
 	
@@ -55,8 +47,8 @@ int	main(int argc, char **argv)
 	print_stack(stack_a);
 	printf("-- STACK B --\n");
 	print_stack(stack_b);
-
-
 	
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
