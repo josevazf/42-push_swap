@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 09:39:29 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 10:29:49 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef	struct		s_stack
 {
 	int 			srt_index;
 	int				srt_bin_index;
-	int				stk_index;
+	int				stack_pos;
 	int				value;
 	struct s_stack 	*next;
 	struct s_stack	*previous;
@@ -38,7 +38,7 @@ int		is_sign(char c);
 int		is_digit(char c);
 int		intcmp(const char *s1, const char *s2);
 
-// FILE: number_converter.c
+// FILE: n_converter.c
 int		ft_atoi(const char *str);
 int		isdelimiter(char c);
 int		ft_itobi(int nbr);
