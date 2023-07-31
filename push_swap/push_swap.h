@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 09:04:18 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 09:39:29 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_itobi(int nbr);
 
 // FILE: stack_create.c
 void	create_stack_a(char **argv, t_stack **stack_a);
-t_stack	*create_node(int value, long srt_index);
+t_stack	*create_node(int value, long srt_index, t_stack *previous);
 void    print_stack(t_stack *list);
 void	stack_push_back(t_stack **begin_stack, int value, long srt_index);
 
