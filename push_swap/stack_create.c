@@ -17,13 +17,13 @@ void    print_stack(t_stack *stack)
 	t_stack *current;
 	
 	current = stack;
-	printf("value\t\tsrt_index\tbin\t\tprevious\t\t\tnext\n");
+	printf("value\t\tsrt_index\tbin\t\tprevious\t\t\tcurrent\t\t\tnext\n");
     while (current != NULL)
     {
-        printf("%i\t\t%i\t\t%i\t\t%p\t\t\t%p\n", current->value, current->srt_index, current->srt_bin_index, current->previous, current->next);
+        printf("%i\t\t%i\t\t%i\t\t%p\t\t\t%p\t\t\t%p\n", current->value, current->srt_index, current->srt_bin_index, current->previous, current, current->next);
         current = current->next;
     }
-	printf("- - - - - - - - - - -\n");
+	printf("\n");
 }
 
 t_stack	*create_node(int value, long srt_index, t_stack *previous)
