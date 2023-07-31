@@ -17,16 +17,18 @@ void    print_stack(t_stack *stack)
 	t_stack *current;
 	
 	current = stack;
-	printf("value\t\tsrt_index\tbin\t\tprevious\t\t\tcurrent\t\t\tnext\n");
-    while (current != NULL)
+	printf("value\tindex\tbin\tPREVIOUS\tCURRENT\t\tNEXT\n");
+	printf("%i\t%i\t%i\t%p\t\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
+    current = current->next;
+	while (current != NULL)
     {
-        printf("%i\t\t%i\t\t%i\t\t%p\t\t\t%p\t\t\t%p\n", current->value, current->srt_index, current->srt_bin_index, current->previous, current, current->next);
+        printf("%i\t%i\t%i\t%p\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
         current = current->next;
     }
 	printf("\n");
 }
 
-t_stack	*create_node(int value, long srt_index, t_stack *previous)
+t_stack	*create_node(int value, long index, t_stack *previous)
 {
 	t_stack	*node;
 
@@ -34,14 +36,14 @@ t_stack	*create_node(int value, long srt_index, t_stack *previous)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->srt_index = srt_index;
+	node->index = index;
 	node->next = NULL;
 	node->previous = previous;
 
 	return (node);
 }
 
-void	stack_push_back(t_stack **begin_stack, int value, long srt_index)
+void	stack_push_back(t_stack **begin_stack, int value, long index)
 {
 	t_stack	*node;
 
@@ -50,27 +52,28 @@ void	stack_push_back(t_stack **begin_stack, int value, long srt_index)
 	{
 		while(node->next)
 			node = node->next;
-		node->next = create_node(value, srt_index, node);
+		node->next = create_node(value, index, node);
 	}
 	else
-		*begin_stack = create_node(value, srt_index, node);	
+		*begin_stack = create_node(value, index, node);	
 }
 
 // Creates linked list with values from argv and srt_index = 0
-void	create_stack_a(char **argv, t_stack **stack_a)
+t_stack	*create_stack_a(char **argv, t_stack **stack_a)
 {
 	int 	i;
 	int 	value;
-	long 	srt_index;
+	long 	index;
 
 	i = 0;
-	srt_index = 0;
+	index = 0;
 	while (argv[++i])
 	{
 		value = ft_atoi(argv[i]);
 		if (i == 1)
-			*stack_a = create_node(value, srt_index, NULL);
+			*stack_a = create_node(value, index, NULL);
 		else
-			stack_push_back(stack_a, value, srt_index);
+			stack_push_back(stack_a, value, index);
 	}
+	return (*stack_a);
 }

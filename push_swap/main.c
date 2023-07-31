@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/30 12:43:03 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 11:40:26 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,18 @@ void	error_handle()
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
+	//t_stack *stack_b;
 
 	if (argc < 2)
 		return (0);
 	if (!check_args(argv))
 		error_handle();
-	create_stack_a(argv, &stack_a);
-	print_stack(stack_a); //  ******** CLEAN ME ********
+	//stack_b = NULL;
+	stack_a = create_stack_a(argv, &stack_a);
+	/* print_stack(stack_a);  ******** CLEAN ME ******* */
 	shadow_sort(&stack_a, argc - 1);
-	//print_stack(stack_a); //  ******** CLEAN ME ********
+	//print_stack(stack_b);
+	swap(stack_a);
+	print_stack(stack_a); //  ******** CLEAN ME ********
 	return (0);
 }
