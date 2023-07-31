@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 16:21:47 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 17:37:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	push(t_stack **stack_to, t_stack **stack_from);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_b, t_stack **stack_a);
 
-
+// FILE: main_utils.c
 void	error_handle();
+void	free_stack(t_stack **stack);
 
 #endif
