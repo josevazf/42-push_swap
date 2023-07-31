@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:44:45 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 12:00:04 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 14:59:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	shadow_sort(t_stack **stack_a, int list_length)
 		min_node->bin_index = ft_itobi(index_value);
 		index_value++;
 	}
-	print_stack(*stack_a);
+	//print_stack(*stack_a);
 }

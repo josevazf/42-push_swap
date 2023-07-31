@@ -18,11 +18,12 @@ void    print_stack(t_stack *stack)
 	
 	current = stack;
 	printf("value\tindex\tbin\tPREVIOUS\tCURRENT\t\tNEXT\n");
-	printf("%i\t%i\t%i\t%p\t\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
-    current = current->next;
 	while (current != NULL)
     {
-        printf("%i\t%i\t%i\t%p\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
+		if (current->previous == NULL)
+			printf("%i\t%i\t%i\t%p\t\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
+        else
+			printf("%i\t%i\t%i\t%p\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
         current = current->next;
     }
 	printf("\n");

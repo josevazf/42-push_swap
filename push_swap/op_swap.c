@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 10:37:22 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 13:06:30 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 14:49:51 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	swap(t_stack *stack)
 {
 	int 	tmp;
 
+	if (stack == NULL || stack->next == NULL)
+		return ;
 	tmp = stack->next->index;
 	stack->next->index = stack->index;
 	stack->index = tmp;
@@ -36,5 +38,13 @@ void	sa(t_stack **stack_a)
 void	sb(t_stack **stack_b)
 {
 	swap(*stack_b);
-	printf("sa\n");
+	printf("sb\n");
 }
+
+void	ss(t_stack **stack_a, t_stack **stack_b)
+{
+	sa(stack_a);
+	sb(stack_b);
+	printf("ss\n");	
+}
+
