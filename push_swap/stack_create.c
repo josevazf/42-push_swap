@@ -20,15 +20,15 @@ void    print_stack(t_stack *stack)
     while (current != NULL)
     {
         printf("value: %i \n", current->value);
-		printf("index: %i \n", current->index);
-		printf("index: %i \n", current->bin_index);
+		printf("srt_index: %i \n", current->srt_index);
+		printf("srt_index: %i \n", current->srt_bin_index);
 		printf("\n");
         current = current->next;
     }
 	printf("- - - - - - - - - - -\n");
 }
 
-t_stack	*create_node(int value, long index)
+t_stack	*create_node(int value, long srt_index)
 {
 	t_stack	*node;
 
@@ -36,42 +36,42 @@ t_stack	*create_node(int value, long index)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->index = index;
+	node->srt_index = srt_index;
 	node->next = NULL;
 
 	return (node);
 }
 
-void	stack_push_back(t_stack **begin_stack, int value, long index)
+void	stack_push_back(t_stack **begin_stack, int value, long srt_index)
 {
-	t_stack	*back;
+	t_stack	*node;
 
-	back = *begin_stack;
-	if (back)
+	node = *begin_stack;
+	if (node)
 	{
-		while(back->next)
-			back = back->next;
-		back->next = create_node(value, index);
+		while(node->next)
+			node = node->next;
+		node->next = create_node(value, srt_index);
 	}
 	else
-		*begin_stack = create_node(value, index);	
+		*begin_stack = create_node(value, srt_index);	
 }
 
-// Creates linked list with values from argv and index = 0
+// Creates linked list with values from argv and srt_index = 0
 void	create_stack_a(char **argv, t_stack **stack_a)
 {
 	int 	i;
 	int 	value;
-	long 	index;
+	long 	srt_index;
 
 	i = 0;
-	index = 0;
+	srt_index = 0;
 	while (argv[++i])
 	{
 		value = ft_atoi(argv[i]);
 		if (i == 1)
-			*stack_a = create_node(value, index);
+			*stack_a = create_node(value, srt_index);
 		else
-			stack_push_back(stack_a, value, index);
+			stack_push_back(stack_a, value, srt_index);
 	}
 }
