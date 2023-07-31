@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 17:38:12 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 17:48:58 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,13 @@ int	main(int argc, char **argv)
 	pb(&stack_b, &stack_a);
 	pb(&stack_b, &stack_a);
 	pb(&stack_b, &stack_a);
-	//pa(&stack_a, &stack_b);
-	//pb(&stack_b, &stack_a);
+	pa(&stack_a, &stack_b);
+	pb(&stack_b, &stack_a);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	// pa(&stack_a, &stack_b);
 
-	//pa(&stack_a, &stack_b);
+
 	
 	printf("-- STACK A--\n");
 	print_stack(stack_a);
