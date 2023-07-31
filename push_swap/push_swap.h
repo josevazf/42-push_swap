@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 12:11:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/07/31 13:06:55 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ t_stack	*get_min(t_stack *stack_a, int list_length);
 
 // FILE: op_swap.c
 void	swap(t_stack *stack);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
 
 
 void	error_handle();
