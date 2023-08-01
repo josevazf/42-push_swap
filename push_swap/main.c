@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 14:00:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:33:17 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	stack_a = create_stack_a(argv, &stack_a);
 	shadow_sort(&stack_a, argc - 1);
-		printf("-- STACK A--\n");
+/* 		printf("-- STACK A--\n");
 		print_stack(stack_a);
 		printf("-- STACK B --\n");
-		print_stack(stack_b);
+		print_stack(stack_b); */
 		
 	main_sort(&stack_a, &stack_b, argc - 1);
 	//pb(&stack_b, &stack_a);
-		printf("-- STACK A--\n");
+/* 		printf("-- STACK A--\n");
 		print_stack(stack_a);
 		printf("-- STACK B --\n");
-		print_stack(stack_b);
-		
+		print_stack(stack_b); */
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
