@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:02:39 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 10:27:59 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:58:32 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 void	rotate(t_stack **stack)
 {
 	t_stack *tmp;
-
+	t_stack *last;
+	
+	last = stack_last(*stack);
 	if ((*stack)->next == NULL)
 		return ;
-		
+	tmp = *stack;
+	*stack = (*stack)->next;
+	(*stack)->previous = NULL;
+	tmp->next = NULL;
+	last->next = tmp;
+	tmp->previous = last;
 }
 
 void	ra(t_stack **stack_a)
