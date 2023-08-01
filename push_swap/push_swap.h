@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 17:37:21 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:28:52 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,13 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 void	push(t_stack **stack_to, t_stack **stack_from);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_b, t_stack **stack_a);
+
+// FILE: op_rotate.c
+void	rotate(t_stack **stack);
+void	ra(t_stack **stack_a);
+void	rb(t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+
 
 // FILE: main_utils.c
 void	error_handle();
