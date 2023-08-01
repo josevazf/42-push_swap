@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 11:15:45 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 12:54:34 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,10 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 // main_utils.c
 void	error_handle();
 void	free_stack(t_stack **stack);
+
+// main_sort.c
+void	main_sort(t_stack **stack_a, t_stack **stack_b, int list_length);
+int		is_sorted(t_stack *stack_a, int list_length);
+
 
 #endif
