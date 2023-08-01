@@ -23,7 +23,7 @@ void    print_stack(t_stack *stack)
 		if (current->previous == NULL)
 			printf("%i\t%i\t%i\t%p\t\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
         else
-			printf("%i\t%i\t%i\t%p\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
+			printf("%i\t%i\t%i\t%p\t%p\t%p\t\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
         current = current->next;
     }
 	printf("\n");
