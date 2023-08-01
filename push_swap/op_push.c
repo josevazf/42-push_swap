@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 10:38:59 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 17:56:44 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:08:25 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,24 @@
 
 void	push(t_stack **stack_to, t_stack **stack_from)
 {
-	t_stack *first_to;
-	t_stack *first_from;
-	t_stack *temp;
-	
-	first_from = (*stack_from)->next;
-	first_to = (*stack_from);
+	t_stack	*tmp;
+
 	if (*stack_from == NULL)
 		return ;
-	if ((*stack_to)->index == 0)
+	if (*stack_to != NULL)
+		(*stack_to)->previous = *stack_from;
+	if ((*stack_from)->next == NULL)
 	{
-		(*stack_to)->value = (*stack_from)->value;
-		(*stack_to)->index = (*stack_from)->index;
-		(*stack_to)->bin_index = (*stack_from)->bin_index;
-		//free((*stack_from));
-		(*stack_from)= first_from;
-		(*stack_from)->previous = NULL;
+		(*stack_from)->next = *stack_to;
+		*stack_to = *stack_from;
+		(*stack_from) = NULL;
+		return ;
 	}
-	else
-	{
-		temp = (*stack_to);
-		(*stack_to)->previous = first_to;
-		(*stack_to) = first_to;
-		(*stack_to)->next = temp;
-		//free((*stack_from));
-		(*stack_from)= first_from;
-		(*stack_from)->previous = NULL;
-	}
+	tmp = (*stack_from)->next;
+	(*stack_from)->next = *stack_to;
+	*stack_to = *stack_from;
+	*stack_from = tmp;
+	(*stack_from)->previous = NULL;
 }
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
