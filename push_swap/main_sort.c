@@ -6,56 +6,50 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 14:37:33 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:17:27 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		is_sorted(t_stack *stack_a, int list_length)
+int		is_sorted(t_stack *stack)
 {
-	while (list_length--)
+	while (stack->next)
 	{
-		if (stack_a->value > stack_a->next->value)
+		if (stack->value > (stack->next->value))
 			return (0);
-		if (stack_a->next == NULL)
+		if (stack->next == NULL)
 			return (1);
-		stack_a = stack_a->next;		
+		stack = stack->next;
 	}
 	return (1);
 }
 
 void	main_sort(t_stack **stack_a, t_stack **stack_b, int list_length)
 {
-	//t_stack *current;
+	//t_stack *stack;
 	int 	bit;
-	int 	push_back;
 	int 	size;
 	int 	i;
 	
 	i = 0;
-	bit = 0;
-	size = list_length;
-	printf("%i", size);
-	while(++bit)
+	bit = 1;
+	while (!is_sorted(*stack_a))
 	{
-		push_back = 0;
-		if (is_sorted(*stack_a, list_length))
-			return ;
+		size = list_length;
 		while (size-- > i)
 		{
-			if (((((*stack_a)->bin_index) >> (bit - 1)) & 1) == 0)
+			if (((((*stack_a)->bin_index) >> (bit)) & 1) == 0)
 			{
 				pb(stack_b, stack_a);
-				push_back++;
 			}	
 			else
 				ra(stack_a);
 		}
-		//while (push_back-- > i)
-		//{
-			//pa(stack_a, stack_b);
-
-		//}
+		while (*stack_b != NULL)
+		{
+			pa(stack_a, stack_b);
+		}
+		bit++;
 	}
 }
