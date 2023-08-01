@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 10:38:59 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 10:08:25 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:35:23 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push(t_stack **stack_to, t_stack **stack_from)
 	{
 		(*stack_from)->next = *stack_to;
 		*stack_to = *stack_from;
-		(*stack_from) = NULL;
+		*stack_from = NULL;
 		return ;
 	}
 	tmp = (*stack_from)->next;
