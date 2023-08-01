@@ -29,6 +29,17 @@ void    print_stack(t_stack *stack)
 	printf("\n");
 }
 
+t_stack	*ft_stack_last(t_stack *begin_stack)
+{
+	if (!begin_stack)
+		return (NULL);
+		
+	while(begin_stack->next)
+		begin_stack = begin_stack->next;
+		
+	return (begin_stack);
+}
+
 t_stack	*create_node(int value, long index, t_stack *previous)
 {
 	t_stack	*node;
