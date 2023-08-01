@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 14:26:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:37:33 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	main_sort(t_stack **stack_a, t_stack **stack_b, int list_length)
 		push_back = 0;
 		if (is_sorted(*stack_a, list_length))
 			return ;
-		while (size-- >= i)
+		while (size-- > i)
 		{
 			if (((((*stack_a)->bin_index) >> (bit - 1)) & 1) == 0)
 			{
@@ -52,9 +52,10 @@ void	main_sort(t_stack **stack_a, t_stack **stack_b, int list_length)
 			else
 				ra(stack_a);
 		}
-		while (push_back-- >= i)
-		{
-			pa(stack_a, stack_b);
-		}
+		//while (push_back-- > i)
+		//{
+			//pa(stack_a, stack_b);
+
+		//}
 	}
 }
