@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 11:02:29 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/01 12:01:06 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	printf("-- STACK B --\n");
 	print_stack(stack_b);
 	//pa(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
 	//rb(&stack_b);
 
 
