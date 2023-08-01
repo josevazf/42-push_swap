@@ -29,7 +29,7 @@ void    print_stack(t_stack *stack)
 	printf("\n");
 }
 
-t_stack	*ft_stack_last(t_stack *begin_stack)
+t_stack	*stack_last(t_stack *begin_stack)
 {
 	if (!begin_stack)
 		return (NULL);
