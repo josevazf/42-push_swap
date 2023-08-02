@@ -19,7 +19,7 @@ OBJS		= main_utils.o main_sort.o check_args.o check_args_utils.o n_converter.o s
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME) && ./push_swap 87 -487 781 -100 101 0 1 
+	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
