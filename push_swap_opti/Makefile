@@ -6,7 +6,7 @@
 #    By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 10:36:01 by jrocha-v          #+#    #+#              #
-#    Updated: 2023/08/01 15:17:47 by jrocha-v         ###   ########.fr        #
+#    Updated: 2023/08/02 10:30:50 by jrocha-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS		= main_utils.o main_sort.o check_args.o check_args_utils.o n_converter.o s
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME) && ./push_swap 87 -487 781 -100 101 0 1 
+	$(CC) $(CFLAGS) main.c $(OBJS) -o $(NAME) && ./push_swap  87 -487 781 -100 101 0 1
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
