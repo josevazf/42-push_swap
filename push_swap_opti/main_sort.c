@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/03 11:55:39 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/03 11:56:41 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		return ;
 	if (stack_size == 4)
 		pb(stack_b, stack_a);
-	else if
-		pb(stack_b);
+	else
+		pb(stack_b, stack_a);
 		
 }
 
