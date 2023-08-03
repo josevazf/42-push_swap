@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/03 11:55:35 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/03 12:22:42 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	small_sort(t_stack **stack_a);
 int		is_sorted(t_stack *stack_a);
 int		highest_index(t_stack *stack);
+int		lowest_index(t_stack *stack);
+
 
 int		check_bit(t_stack *stack_a, int bit);
 
