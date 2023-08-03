@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/03 11:56:41 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/03 12:35:57 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		check_bit(t_stack *stack_a, int bit)
 	return (0);
 }
 
-int	highest_index(t_stack *stack)
+int		highest_index(t_stack *stack)
 {
 	int		index;
 
@@ -41,14 +41,14 @@ int	highest_index(t_stack *stack)
 	return (index);
 }
 
-int	lowest_index(t_stack *stack)
+int		lowest_index(t_stack *stack)
 {
 	int		index;
 
 	index = stack->index;
 	while (stack)
 	{
-		if (stack->index < index)
+		if (stack->index > index)
 			index = stack->index;
 		stack = stack->next;
 	}
@@ -70,14 +70,14 @@ int		is_sorted(t_stack *stack)
 
 void	small_sort(t_stack **stack_a)
 {
-	int		highest;
+	int		max;
 
 	if (is_sorted(*stack_a))
 		return ;
-	highest = highest_index(*stack_a);
-	if ((*stack_a)->index == highest)
+	max = highest_index(*stack_a);
+	if ((*stack_a)->index == max)
 		ra(stack_a);
-	else if ((*stack_a)->next->index == highest)
+	else if ((*stack_a)->next->index == max)
 		rra(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		sa(stack_a);
@@ -85,11 +85,18 @@ void	small_sort(t_stack **stack_a)
 
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	int		highest;
+	int		max;
+	int 	min;
 
 	if (is_sorted(*stack_a))
 		return ;
+	max = highest_index(*stack_a);
+	min = smallest_index(*stack_a);
 	if (stack_size == 4)
+	{
+		while (stack_a->index != min)
+			ra(stack_a);
+	}
 		pb(stack_b, stack_a);
 	else
 		pb(stack_b, stack_a);
