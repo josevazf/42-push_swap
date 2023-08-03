@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/03 12:35:57 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/03 13:19:17 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		check_bit(t_stack *stack_a, int bit)
 	return (0);
 }
 
-int		highest_index(t_stack *stack)
+int		max_index(t_stack *stack)
 {
 	int		index;
 
@@ -41,22 +41,25 @@ int		highest_index(t_stack *stack)
 	return (index);
 }
 
-int		lowest_index(t_stack *stack)
+int		min_index(t_stack *stack)
 {
 	int		index;
 
 	index = stack->index;
 	while (stack)
 	{
-		if (stack->index > index)
+		if (stack->index < index)
 			index = stack->index;
 		stack = stack->next;
 	}
 	return (index);
 }
 
-int		is_sorted(t_stack *stack)
+int		is_sorted(t_stack *stack_a)
 {
+	t_stack	*stack;
+
+	stack = stack_a;
 	while (stack->next)
 	{
 		if (stack->value > (stack->next->value))
@@ -74,13 +77,22 @@ void	small_sort(t_stack **stack_a)
 
 	if (is_sorted(*stack_a))
 		return ;
-	max = highest_index(*stack_a);
+	max = max_index(*stack_a);
+	printf("%i\n", max);
+	printf("%i\n", (*stack_a)->index);
 	if ((*stack_a)->index == max)
+	{
+		printf("%i\n", max);
+		printf("%i\n", (*stack_a)->index);
 		ra(stack_a);
+	}
+	
 	else if ((*stack_a)->next->index == max)
 		rra(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		sa(stack_a);
+	printf("%i\n", max);
+	printf("%i\n", (*stack_a)->index);
 }
 
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
@@ -88,19 +100,29 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	int		max;
 	int 	min;
 
-	if (is_sorted(*stack_a))
-		return ;
-	max = highest_index(*stack_a);
-	min = smallest_index(*stack_a);
+	max = max_index(*stack_a);
+	min = min_index(*stack_a);
 	if (stack_size == 4)
 	{
-		while (stack_a->index != min)
+		while ((*stack_a)->index != min)
 			ra(stack_a);
+		pb(stack_b, stack_a);
+		small_sort(stack_a);
+		pa(stack_a, stack_b);
 	}
+	else if (stack_size == 5)
+	{
+		while ((*stack_a)->index != max)
+			ra(stack_a);
 		pb(stack_b, stack_a);
-	else
+		while ((*stack_a)->index != min)
+			ra(stack_a);
 		pb(stack_b, stack_a);
-		
+		small_sort(stack_a);
+		pa(stack_a, stack_b);
+		pa(stack_a, stack_b);
+		rra(stack_a);
+	}
 }
 
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
@@ -131,6 +153,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 
 void	main_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
+	printf("stack_size: %i\n", stack_size);
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		sa(stack_a);
 	else if ((stack_size == 3) && !is_sorted(*stack_a))
