@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:52:40 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 10:15:41 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:32:47 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 //	the stacks and exits.
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
+	t_stack		*stack_a;
+	t_stack		*stack_b;
 
 	if (argc < 2)
 		return (0);

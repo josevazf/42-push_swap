@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:02:39 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 10:58:32 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:33:26 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rotate(t_stack **stack)
 {
-	t_stack *tmp;
-	t_stack *last;
-	
+	t_stack		*tmp;
+	t_stack		*last;
+
 	last = stack_last(*stack);
 	if ((*stack)->next == NULL)
 		return ;
@@ -31,18 +31,18 @@ void	rotate(t_stack **stack)
 void	ra(t_stack **stack_a)
 {
 	rotate(stack_a);
-	printf("ra\n");
+	ft_putstr("ra\n");
 }
 
 void	rb(t_stack **stack_b)
 {
 	rotate(stack_b);
-	printf("rb\n");
+	ft_putstr("rb\n");
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	printf("rr\n");
+	ft_putstr("rr\n");
 }

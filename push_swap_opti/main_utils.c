@@ -6,14 +6,14 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:35:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 10:19:27 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:53:27 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Displays error message and exits with standard error code 1
-void	error_handle()
+void	error_handle(void)
 {
 	write(2, "Error\n", 6);
 	exit (1);
@@ -22,7 +22,7 @@ void	error_handle()
 // Frees the stack
 void	free_stack(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack		*tmp;
 
 	if (!stack || !(*stack))
 		return ;
@@ -42,7 +42,7 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *s)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (s[i])

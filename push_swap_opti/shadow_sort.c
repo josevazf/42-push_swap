@@ -6,12 +6,13 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:44:45 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 10:21:08 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:39:07 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Gets min node
 t_stack	*get_min(t_stack *stack_a, int list_length)
 {
 	t_stack	*current_node;
@@ -33,10 +34,11 @@ t_stack	*get_min(t_stack *stack_a, int list_length)
 	return (min_node);
 }
 
+// Background insertion sort setting index 
 void	shadow_sort(t_stack **stack_a, int list_length)
 {
-	t_stack *min_node;
-	int 	index_value;
+	t_stack		*min_node;
+	int			index_value;
 
 	index_value = 1;
 	while (index_value <= list_length)
@@ -47,7 +49,8 @@ void	shadow_sort(t_stack **stack_a, int list_length)
 	}
 }
 
-int		max_index(t_stack *stack)
+// Gets max index value in the stack
+int	max_index(t_stack *stack)
 {
 	int		index;
 
@@ -61,7 +64,8 @@ int		max_index(t_stack *stack)
 	return (index);
 }
 
-int		min_index(t_stack *stack)
+// Gets min index value in the stack
+int	min_index(t_stack *stack)
 {
 	int		index;
 

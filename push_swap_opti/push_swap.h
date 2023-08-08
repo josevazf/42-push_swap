@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 10:22:24 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:51:23 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 # include <stdio.h>
 # include <limits.h>
 
-typedef	struct		s_stack 
+typedef struct s_stack
 {
-	int 			index;
+	int				index;
 	int				value;
-	struct s_stack 	*next;
+	struct s_stack	*next;
 	struct s_stack	*previous;
 }	t_stack;
 
 // check_args.c
-int 	check_args(char **argv);
+int		check_args(char **argv);
 int		is_number(char *argv);
 int		is_duplicate(char **argv);
 
@@ -41,7 +41,7 @@ int		isdelimiter(char c);
 // stack_create.c
 t_stack	*create_stack_a(char **argv, t_stack **stack_a);
 t_stack	*create_node(int value, long index, t_stack *previous);
-void    print_stack(t_stack *list);
+void	print_stack(t_stack *list);
 void	stack_push_back(t_stack **begin_stack, int value, long index);
 t_stack	*stack_last(t_stack *begin_stack);
 
@@ -75,7 +75,7 @@ void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 // main_utils.c
-void	error_handle();
+void	error_handle(void);
 void	free_stack(t_stack **stack);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
@@ -86,8 +86,6 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	small_sort(t_stack **stack_a);
 int		is_sorted(t_stack *stack_a);
-
-
 int		check_bit(t_stack *stack_a, int bit);
 
 #endif

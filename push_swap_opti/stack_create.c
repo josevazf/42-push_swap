@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                       :+:      :+:    :+:   */
+/*   stack_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 10:14:50 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/27 11:59:03 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:44:22 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ t_stack	*stack_last(t_stack *begin_stack)
 {
 	if (!begin_stack)
 		return (NULL);
-		
-	while(begin_stack->next)
+	while (begin_stack->next)
 		begin_stack = begin_stack->next;
-		
 	return (begin_stack);
 }
 
@@ -34,7 +32,6 @@ t_stack	*create_node(int value, long index, t_stack *previous)
 	node->index = index;
 	node->next = NULL;
 	node->previous = previous;
-
 	return (node);
 }
 
@@ -45,20 +42,20 @@ void	stack_push_back(t_stack **begin_stack, int value, long index)
 	node = *begin_stack;
 	if (node)
 	{
-		while(node->next)
+		while (node->next)
 			node = node->next;
 		node->next = create_node(value, index, node);
 	}
 	else
-		*begin_stack = create_node(value, index, node);	
+		*begin_stack = create_node(value, index, node);
 }
 
 // Creates linked list with values from argv and srt_index = 0
 t_stack	*create_stack_a(char **argv, t_stack **stack_a)
 {
-	int 	i;
-	int 	value;
-	long 	index;
+	int		i;
+	int		value;
+	long	index;
 
 	i = 0;
 	index = 0;
