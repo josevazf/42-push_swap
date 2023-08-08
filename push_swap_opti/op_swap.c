@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 10:37:22 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 14:49:51 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:06:18 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ void	swap(t_stack *stack)
 	tmp = stack->next->index;
 	stack->next->index = stack->index;
 	stack->index = tmp;
-	tmp = stack->next->bin_index;
-	stack->next->bin_index = stack->bin_index;
-	stack->bin_index = tmp;
 	tmp = stack->next->value;
 	stack->next->value = stack->value;
 	stack->value = tmp;

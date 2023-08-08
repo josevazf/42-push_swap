@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/03 13:19:17 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:21:05 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,33 +27,7 @@ int		check_bit(t_stack *stack_a, int bit)
 	return (0);
 }
 
-int		max_index(t_stack *stack)
-{
-	int		index;
 
-	index = stack->index;
-	while (stack)
-	{
-		if (stack->index > index)
-			index = stack->index;
-		stack = stack->next;
-	}
-	return (index);
-}
-
-int		min_index(t_stack *stack)
-{
-	int		index;
-
-	index = stack->index;
-	while (stack)
-	{
-		if (stack->index < index)
-			index = stack->index;
-		stack = stack->next;
-	}
-	return (index);
-}
 
 int		is_sorted(t_stack *stack_a)
 {
@@ -78,21 +52,12 @@ void	small_sort(t_stack **stack_a)
 	if (is_sorted(*stack_a))
 		return ;
 	max = max_index(*stack_a);
-	printf("%i\n", max);
-	printf("%i\n", (*stack_a)->index);
 	if ((*stack_a)->index == max)
-	{
-		printf("%i\n", max);
-		printf("%i\n", (*stack_a)->index);
 		ra(stack_a);
-	}
-	
 	else if ((*stack_a)->next->index == max)
 		rra(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		sa(stack_a);
-	printf("%i\n", max);
-	printf("%i\n", (*stack_a)->index);
 }
 
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
@@ -129,10 +94,8 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	int 	bit;
 	int 	size;
-	//int 	trigger;
 	
 	bit = 0;
-	//trigger = 0;
 	while (!is_sorted(*stack_a))
 	{
 		size = stack_size;
@@ -153,7 +116,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 
 void	main_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	printf("stack_size: %i\n", stack_size);
+	//printf("stack_size: %i\n", stack_size);
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		sa(stack_a);
 	else if ((stack_size == 3) && !is_sorted(*stack_a))

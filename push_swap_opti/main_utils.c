@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_utlis.c                                       :+:      :+:    :+:   */
+/*   main_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:35:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 17:37:33 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:19:27 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	error_handle()
 	exit (1);
 }
 
+// Frees the stack
 void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -32,4 +33,21 @@ void	free_stack(t_stack **stack)
 		*stack = tmp;
 	}
 	*stack = NULL;
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
 }

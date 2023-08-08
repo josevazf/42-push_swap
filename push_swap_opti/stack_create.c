@@ -12,23 +12,6 @@
 
 #include "push_swap.h"
 
-void    print_stack(t_stack *stack)
-{
-	t_stack *current;
-	
-	current = stack;
-	printf("value\tindex\tbin\tPREVIOUS\tCURRENT\t\tNEXT\n");
-	while (current != NULL)
-    {
-		if (current->previous == NULL)
-			printf("%i\t%i\t%i\t%p\t\t%p\t%p\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
-        else
-			printf("%i\t%i\t%i\t%p\t%p\t%p\t\n", current->value, current->index, current->bin_index, current->previous, current, current->next);
-        current = current->next;
-    }
-	printf("\n");
-}
-
 t_stack	*stack_last(t_stack *begin_stack)
 {
 	if (!begin_stack)

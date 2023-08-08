@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/03 12:49:40 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:22:24 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 typedef	struct		s_stack 
 {
 	int 			index;
-	int				bin_index;
-	int				stack_pos;
 	int				value;
 	struct s_stack 	*next;
 	struct s_stack	*previous;
@@ -37,11 +35,8 @@ int		is_duplicate(char **argv);
 int		is_sign(char c);
 int		is_digit(char c);
 int		intcmp(const char *s1, const char *s2);
-
-// n_converter.c
 int		ft_atoi(const char *str);
 int		isdelimiter(char c);
-int		ft_itobi(int nbr);
 
 // stack_create.c
 t_stack	*create_stack_a(char **argv, t_stack **stack_a);
@@ -53,6 +48,8 @@ t_stack	*stack_last(t_stack *begin_stack);
 // shadow_sort.c
 void	shadow_sort(t_stack **stack_a, int list_length);
 t_stack	*get_min(t_stack *stack_a, int list_length);
+int		max_index(t_stack *stack);
+int		min_index(t_stack *stack);
 
 // op_swap.c
 void	swap(t_stack *stack);
@@ -80,6 +77,8 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 // main_utils.c
 void	error_handle();
 void	free_stack(t_stack **stack);
+void	ft_putchar(char c);
+void	ft_putstr(char *s);
 
 // main_sort.c
 void	main_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
@@ -87,8 +86,6 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	small_sort(t_stack **stack_a);
 int		is_sorted(t_stack *stack_a);
-int		max_index(t_stack *stack);
-int		min_index(t_stack *stack);
 
 
 int		check_bit(t_stack *stack_a, int bit);
