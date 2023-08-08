@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 10:41:07 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:04:06 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,6 @@ int	check_bit(t_stack *stack_a, int bit)
 	return (0);
 }
 
-int	is_sorted(t_stack *stack_a)
-{
-	t_stack		*stack;
-
-	stack = stack_a;
-	while (stack->next)
-	{
-		if (stack->value > (stack->next->value))
-			return (0);
-		if (stack->next == NULL)
-			return (1);
-		stack = stack->next;
-	}
-	return (1);
-}
-
 void	small_sort(t_stack **stack_a)
 {
 	int		max;
@@ -57,6 +41,36 @@ void	small_sort(t_stack **stack_a)
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		sa(stack_a);
 }
+
+/* void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
+{
+	int		max;
+	int		min;
+
+	max = max_index(*stack_a);
+	min = min_index(*stack_a);
+	if (stack_size == 4)
+	{
+		while ((*stack_a)->index != min)
+			ra(stack_a);
+		pb(stack_b, stack_a);
+		small_sort(stack_a);
+		pa(stack_a, stack_b);
+	}
+	else
+	{
+		while ((*stack_a)->index != max)
+			ra(stack_a);
+		pb(stack_b, stack_a);
+		while ((*stack_a)->index != min)
+			ra(stack_a);
+		pb(stack_b, stack_a);
+		small_sort(stack_a);
+		pa(stack_a, stack_b);
+		pa(stack_a, stack_b);
+		rra(stack_a);
+	}
+} */
 
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
@@ -73,18 +87,29 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		small_sort(stack_a);
 		pa(stack_a, stack_b);
 	}
-	else if (stack_size == 5)
+	else
 	{
-		while ((*stack_a)->index != max)
-			ra(stack_a);
 		pb(stack_b, stack_a);
-		while ((*stack_a)->index != min)
-			ra(stack_a);
 		pb(stack_b, stack_a);
 		small_sort(stack_a);
-		pa(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
+		while (*stack_b)
+		{
+			if ((*stack_b)->index == min)
+				pa(stack_a, stack_b);
+			else if ((*stack_b)->index == max)
+			{
+				pa(stack_a, stack_b);
+				ra(stack_a);
+			}
+			else
+			{
+				while (((*stack_b)->index > (*stack_a)->index) && ((*stack_b)->index < (*stack_a)->next->index))
+					ra(stack_a);
+				pa(stack_a, stack_b);
+			}
+		}
+		while (!is_sorted(*stack_a))
+			ra(stack_a);
 	}
 }
 

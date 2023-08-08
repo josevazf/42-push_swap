@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:51:58 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 10:55:14 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 14:27:34 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	is_sign(char c)
 	return (c == '+' || c == '-');
 }
 
-int	isdelimiter(char c)
+int	is_delimiter(char c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
@@ -38,7 +38,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	n = 0;
 	sign = 1;
-	while (isdelimiter(str[i]) && str[i])
+	while (is_delimiter(str[i]) && str[i])
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
