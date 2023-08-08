@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 15:04:06 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:58:49 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,16 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		while ((*stack_a)->index != min)
 			ra(stack_a);
 		pb(stack_b, stack_a);
-		small_sort(stack_a);
+		if (!is_sorted(*stack_a))
+			small_sort(stack_a);
 		pa(stack_a, stack_b);
 	}
 	else
 	{
 		pb(stack_b, stack_a);
 		pb(stack_b, stack_a);
-		small_sort(stack_a);
+		if (!is_sorted(*stack_a))
+			small_sort(stack_a);
 		while (*stack_b)
 		{
 			if ((*stack_b)->index == min)
@@ -103,7 +105,7 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 			}
 			else
 			{
-				while (((*stack_b)->index > (*stack_a)->index) && ((*stack_b)->index < (*stack_a)->next->index))
+				while (!(((*stack_a)->index > (*stack_b)->index)))
 					ra(stack_a);
 				pa(stack_a, stack_b);
 			}
