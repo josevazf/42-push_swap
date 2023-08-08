@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 15:58:49 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 17:23:53 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,36 +41,6 @@ void	small_sort(t_stack **stack_a)
 	if ((*stack_a)->index > (*stack_a)->next->index)
 		sa(stack_a);
 }
-
-/* void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
-{
-	int		max;
-	int		min;
-
-	max = max_index(*stack_a);
-	min = min_index(*stack_a);
-	if (stack_size == 4)
-	{
-		while ((*stack_a)->index != min)
-			ra(stack_a);
-		pb(stack_b, stack_a);
-		small_sort(stack_a);
-		pa(stack_a, stack_b);
-	}
-	else
-	{
-		while ((*stack_a)->index != max)
-			ra(stack_a);
-		pb(stack_b, stack_a);
-		while ((*stack_a)->index != min)
-			ra(stack_a);
-		pb(stack_b, stack_a);
-		small_sort(stack_a);
-		pa(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		rra(stack_a);
-	}
-} */
 
 void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
@@ -109,6 +79,10 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 					ra(stack_a);
 				pa(stack_a, stack_b);
 			}
+			if (!(((*stack_a)->index > (*stack_b)->index)))
+				ra(stack_a);
+			while (!is_sorted(*stack_a))
+				ra(stack_a);
 		}
 		while (!is_sorted(*stack_a))
 			ra(stack_a);
@@ -118,7 +92,7 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	int		bit;
-	int		size;
+	int		size;	
 
 	bit = 0;
 	while (!is_sorted(*stack_a))
@@ -142,7 +116,12 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 void	main_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	// printf("stack_size: %i\n", stack_size);
-	if (stack_size == 2 && !is_sorted(*stack_a))
+	if (is_inverted(*stack_a))
+	{
+		while (stack_size--)
+			ra(stack_a);
+	}
+	else if (stack_size == 2 && !is_sorted(*stack_a))
 		sa(stack_a);
 	else if ((stack_size == 3) && !is_sorted(*stack_a))
 		small_sort(stack_a);
