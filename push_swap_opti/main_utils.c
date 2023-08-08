@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:35:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 14:26:34 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 17:19:56 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,7 @@ void	error_handle(void)
 	exit (1);
 }
 
-// Frees the stack
-void	free_stack(t_stack **stack)
-{
-	t_stack		*tmp;
 
-	if (!stack || !(*stack))
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-	*stack = NULL;
-}
 
 void	ft_putchar(char c)
 {
@@ -60,6 +46,22 @@ int	is_sorted(t_stack *stack_a)
 	while (stack->next)
 	{
 		if (stack->value > (stack->next->value))
+			return (0);
+		if (stack->next == NULL)
+			return (1);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+int	is_inverted(t_stack *stack_a)
+{
+	t_stack		*stack;
+
+	stack = stack_a;
+	while (stack->next)
+	{
+		if (stack->value < (stack->next->value))
 			return (0);
 		if (stack->next == NULL)
 			return (1);
