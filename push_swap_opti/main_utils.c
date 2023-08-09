@@ -6,20 +6,18 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:35:27 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 17:19:56 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/09 09:22:40 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Displays error message and exits with standard error code 1
+// Displays error message and exits with error code 1
 void	error_handle(void)
 {
 	write(2, "Error\n", 6);
 	exit (1);
 }
-
-
 
 void	ft_putchar(char c)
 {
@@ -38,6 +36,7 @@ void	ft_putstr(char *s)
 	}
 }
 
+// Checks if stack is sorted
 int	is_sorted(t_stack *stack_a)
 {
 	t_stack		*stack;
@@ -46,22 +45,6 @@ int	is_sorted(t_stack *stack_a)
 	while (stack->next)
 	{
 		if (stack->value > (stack->next->value))
-			return (0);
-		if (stack->next == NULL)
-			return (1);
-		stack = stack->next;
-	}
-	return (1);
-}
-
-int	is_inverted(t_stack *stack_a)
-{
-	t_stack		*stack;
-
-	stack = stack_a;
-	while (stack->next)
-	{
-		if (stack->value < (stack->next->value))
 			return (0);
 		if (stack->next == NULL)
 			return (1);

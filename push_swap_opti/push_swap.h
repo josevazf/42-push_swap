@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 09:49:31 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 17:22:10 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/09 10:31:14 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		is_duplicate(char **argv);
 int		is_sign(char c);
 int		is_digit(char c);
 int		intcmp(const char *s1, const char *s2);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		is_delimiter(char c);
 
 // stack_utils.c
@@ -79,13 +79,12 @@ void	error_handle(void);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 int		is_sorted(t_stack *stack_a);
-int		is_inverted(t_stack *stack_a);
 
 // main_sort.c
 void	main_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
+void	sort_3(t_stack **stack_a);
+void	sort_4(t_stack **stack_a, t_stack **stack_b);
+void	sort_5(t_stack **stack_a, t_stack **stack_b);
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
-void	med_sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
-void	small_sort(t_stack **stack_a);
-int		check_bit(t_stack *stack_a, int bit);
 
 #endif

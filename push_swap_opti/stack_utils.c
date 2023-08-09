@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_create.c                                     :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 10:14:50 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 17:20:11 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/09 10:33:13 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	stack_push_back(t_stack **begin_stack, int value, long index)
 t_stack	*create_stack_a(char **argv, t_stack **stack_a)
 {
 	int		i;
-	int		value;
+	long	value;
 	long	index;
 
 	i = 0;
@@ -62,8 +62,6 @@ t_stack	*create_stack_a(char **argv, t_stack **stack_a)
 	while (argv[++i])
 	{
 		value = ft_atoi(argv[i]);
-		if (value < INT_MIN || value > INT_MAX)
-			error_handle();
 		if (i == 1)
 			*stack_a = create_node(value, index, NULL);
 		else

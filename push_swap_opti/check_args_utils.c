@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:51:58 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/08 14:27:34 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/09 10:30:57 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	is_delimiter(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int		i;
-	int		n;
-	int		sign;
+	long	n;
+	long	sign;
 
 	i = 0;
 	n = 0;
