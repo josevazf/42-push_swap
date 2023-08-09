@@ -6,11 +6,27 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:23:07 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 16:16:16 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/09 10:15:19 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/* int	check_bit(t_stack *stack_a, int bit)
+{
+	t_stack		*stack;
+
+	stack = stack_a;
+	printf("Bit-check: %i\n", bit);
+	printf("Index: %i\n", stack->index);
+	while (stack->next)
+	{
+		if (((stack->index >> bit) & 1) == 0)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
+} */
 
 int		is_sorted(t_stack *stack)
 {
