@@ -6,12 +6,13 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:44:45 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/07/31 14:59:56 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:39:07 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Gets min node
 t_stack	*get_min(t_stack *stack_a, int list_length)
 {
 	t_stack	*current_node;
@@ -33,18 +34,47 @@ t_stack	*get_min(t_stack *stack_a, int list_length)
 	return (min_node);
 }
 
+// Background insertion sort setting index 
 void	shadow_sort(t_stack **stack_a, int list_length)
 {
-	t_stack *min_node;
-	int 	index_value;
+	t_stack		*min_node;
+	int			index_value;
 
 	index_value = 1;
 	while (index_value <= list_length)
 	{
 		min_node = get_min(*stack_a, list_length);
 		min_node->index = index_value;
-		min_node->bin_index = ft_itobi(index_value);
 		index_value++;
 	}
-	//print_stack(*stack_a);
+}
+
+// Gets max index value in the stack
+int	max_index(t_stack *stack)
+{
+	int		index;
+
+	index = stack->index;
+	while (stack)
+	{
+		if (stack->index > index)
+			index = stack->index;
+		stack = stack->next;
+	}
+	return (index);
+}
+
+// Gets min index value in the stack
+int	min_index(t_stack *stack)
+{
+	int		index;
+
+	index = stack->index;
+	while (stack)
+	{
+		if (stack->index < index)
+			index = stack->index;
+		stack = stack->next;
+	}
+	return (index);
 }

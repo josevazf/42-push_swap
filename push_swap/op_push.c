@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 10:38:59 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 10:35:23 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:45:52 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ void	push(t_stack **stack_to, t_stack **stack_from)
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
-	printf("pa\n");
+	ft_putstr("pa\n");
 }
 
 void	pb(t_stack **stack_b, t_stack **stack_a)
 {
 	push(stack_b, stack_a);
-	printf("pb\n");	
+	ft_putstr("pb\n");
 }

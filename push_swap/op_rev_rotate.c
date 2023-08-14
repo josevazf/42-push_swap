@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:02:39 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/08/01 12:00:43 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/08/08 10:27:36 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ void	rev_rotate(t_stack **stack)
 void	rra(t_stack **stack_a)
 {
 	rev_rotate(stack_a);
-	printf("ra\n");
+	ft_putstr("rra\n");
 }
 
 void	rrb(t_stack **stack_b)
 {
 	rev_rotate(stack_b);
-	printf("rb\n");
+	ft_putstr("rrb\n");
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
-	printf("rr\n");
+	ft_putstr("rrr\n");
 }
