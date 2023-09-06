@@ -1,3 +1,4 @@
 # Object files
 *.o
 push_swap_visualizer
+.DS_Store
