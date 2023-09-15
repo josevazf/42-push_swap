@@ -6,7 +6,7 @@ The _push_swap_ program calculates and displays on the standard output the small
 
 The two stacks are named **a** and **b**. At the beginning the stack **a** contains a random amount of negative and/or positive numbers which cannot be duplicated and stack **b** is empty.
 
-The goal is to sort in ascending order numnbers into stack a with the following operations:
+The goal is to sort in ascending order numbers into stack a with the following operations:
 - `sa` (swap a): swap the first 2 elements at the top of stack **a**; do nothing it there is only one or no elements;
 - `sb` (swap b): swap the first 2 elements at the top of stack **b**; do nothing it there is only one or no elements;
 - `ss`: do `sa` and `sb` at the same time;
