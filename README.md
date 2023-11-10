@@ -18,3 +18,14 @@ The goal is to sort in ascending order numbers into stack a with the following o
 - `rra` (reverse rotate a): shift down all elements of stack **a** by 1;
 - `rrb` (reverse rotate b): shift down all elements of stack **b** by 1;
 - `rrr`: do `rra` and `rrb` at the same time.
+
+## Norminette
+This project was written in accordance with the Norm, which is the coding standard of the 42 school.
+
+The Norm includes:
+- Forbidden: for, do...while, switch, case, goto, ternary operators and variable-length arrays 
+- Maximum of 25 lines per function
+- Maximum line length: 80 columns
+- Maximum 4 parameters per function 
+- Variable assignments and declarations must be on separate lines
+- etc...
